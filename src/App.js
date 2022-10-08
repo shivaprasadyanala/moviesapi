@@ -33,10 +33,10 @@ function App() {
 
 
   }, [])
-  const getyear = (st) => {
-    console.log(st.slice(0, 4));
-    return st.slice(0, 4);
-  }
+  // const getyear = (st) => {
+  //   console.log(st.slice(0, 4));
+  //   return st.slice(0, 4);
+  // }
   // console.log(movies.data.results[0].title);
   console.log(movies);
   if (loading) return "loading...";
