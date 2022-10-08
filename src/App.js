@@ -49,7 +49,7 @@ function App() {
       <>
         <div className='movies'>
           {
-            movies.data.results.filter((mo) => mo.release_date.slice(0, 4) == date)
+            movies.data.results.filter((mo) => mo.release_date.slice(0, 4) === date)
               .map((m) => {
                 return (
                   <div className='movie' onClick={() => { setModel(m.id); setTimeout(() => setShow(true), [600]) }} >
