@@ -1,0 +1,14 @@
+.model {
+    margin: 50px;
+    /* border: 3px solid black; */
+    border-radius: 10px;
+    padding: 15px;
+    position: fixed;
+    /* top: 5%; */
+    top: 0;
+    color: #fff;
+    max-width: 40rem;
+    max-height: 50rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-left: 20rem;
+}

@@ -1,23 +1,76 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-
+import Model from './Model';
+import { useState, useEffect } from 'react';
 function App() {
+  const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(true);
+  const [model, setModel] = useState(false);
+  const [show, setShow] = useState(false);
+  const [date, setDate] = useState(2022);
+  useEffect(() => {
+    setTimeout(() => {
+      fetch(' https://movie-task.vercel.app/api/popular?page=12')
+        .then(response => {
+          if (response.ok) {
+            return response.json();
+          }
+          throw response;
+        })
+        .then(data => {
+          console.log(data);
+          setMovies(data)
+        })
+        .then(error => {
+          console.error("error in fetching the data" + error);
+          setError(error);
+        })
+        .finally(() => {
+          setLoading(false);
+        })
+    }, 200)
+
+
+  }, [])
+  const getyear = (st) => {
+    console.log(st.slice(0, 4));
+    return st.slice(0, 4);
+  }
+  // console.log(movies.data.results[0].title);
+  console.log(movies);
+  if (loading) return "loading...";
+  if (error) return "error..."
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>hello welcome to movie listing</h1>
+      <label htmlFor="">filter by year </label>
+      <input type="number" placeholder='filter by year' onChange={(e) => setDate(e.target.value)} />
+      <>
+        <div className='movies'>
+          {
+            movies.data.results.filter((mo) => mo.release_date.slice(0, 4) == date)
+              .map((m) => {
+                return (
+                  <div className='movie' onClick={() => { setModel(m.id); setTimeout(() => setShow(true), [600]) }} >
+                    {/* {link = } */}
+                    <div><img src={`https://image.tmdb.org/t/p/original/${m.poster_path}`} alt="img" width="150px" /></div>
+                    <p>title:{m.title}</p>
+                    <p>release data:{m.release_date}</p>
+                    <p>rating:{m.vote_average}</p>
+                  </div>
+                )
+
+              })
+          }
+        </div>
+        {model &&
+          <Model model={model} show={show} setShow={setShow} />}
+      </>
+
+
+
+
     </div>
   );
 }
