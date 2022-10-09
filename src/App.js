@@ -9,6 +9,7 @@ function App() {
   const [model, setModel] = useState(false);
   const [show, setShow] = useState(false);
   const [date, setDate] = useState(2022);
+  const [sm, setSm] = useState(false);
   useEffect(() => {
     setTimeout(() => {
       fetch(' https://movie-task.vercel.app/api/popular?page=12')
@@ -45,11 +46,12 @@ function App() {
     <div className="App">
       <h1>hello welcome to movie listing</h1>
       <label htmlFor="">filter by year </label>
-      <input type="number" placeholder='filter by year' onChange={(e) => setDate(e.target.value)} />
+      <input type="number" placeholder='filter by year' onChange={(e) => { setDate(e.target.value); setSm(false); }} />
+      <button onClick={() => setSm(true)}>find</button>
       <>
         <div className='movies'>
           {
-            movies.data.results.filter((mo) => mo.release_date.slice(0, 4) === date)
+            sm && movies.data.results.filter((mo) => mo.release_date.slice(0, 4) === date)
               .map((m) => {
                 return (
                   <div className='movie' onClick={() => { setModel(m.id); setTimeout(() => setShow(true), [600]) }} >
@@ -64,6 +66,7 @@ function App() {
               })
           }
         </div>
+        {!date && console.log("no movie")}
         {model &&
           <Model model={model} show={show} setShow={setShow} />}
       </>
