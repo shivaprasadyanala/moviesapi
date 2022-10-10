@@ -7,15 +7,15 @@
     /* top: 5%; */
     top: 0;
     color: #fff;
-    max-width: 40rem;
+    max-width: 60rem;
     max-height: 50rem;
     background-color: rgba(0, 0, 0, 0.5);
-    margin-left: 20rem;
-    margin-top: 5rem;
+    margin-left: 15rem;
+    margin-top: 12rem;
 }
 
 .model p {
-    margin: 5px;
+    margin: 4px;
 }
 
 .production {

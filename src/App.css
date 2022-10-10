@@ -55,6 +55,17 @@
     /* max-width: 200px; */
 }
 
+.input {
+    margin-left: 30rem;
+    width: 30rem;
+}
+
+.page {
+    margin-left: 30rem;
+    position: absolute;
+    top: 20%;
+}
+
 .movie p {
     margin: 5px;
 }
