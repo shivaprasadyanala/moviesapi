@@ -5,7 +5,7 @@ import Movies from './Movies';
 
 import { useState, useEffect } from 'react';
 function App() {
-  const [pageCount, setPageCount] = useState(20);
+  const [pageCount] = useState(20);
   const [movies, setMovies] = useState([]);
   const [pageoffset, setpageOffset] = useState(1);
 
