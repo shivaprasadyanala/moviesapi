@@ -55,6 +55,10 @@
     /* max-width: 200px; */
 }
 
+.movie p {
+    margin: 5px;
+}
+
 @media screen and (max-width: 800px) {
     .movies {
         display: grid;
