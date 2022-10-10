@@ -48,6 +48,7 @@ function App() {
       <label htmlFor="">filter by year </label>
       <input type="number" placeholder='filter by year' onChange={(e) => { setDate(e.target.value); setSm(false); }} />
       <button onClick={() => setSm(true)}>find</button>
+      <h3>click on the movie for further description</h3>
       <>
         <div className='movies'>
           {
