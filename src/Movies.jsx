@@ -49,9 +49,9 @@ function Movies({ movies }) {
       <input type="number" placeholder='filter by year' onChange={(e) => { setDate(e.target.value); setSm(false); }} />
       <button onClick={() => setSm(true)}>find</button> */}
       <div class="input-group mb-3 input">
-        <input type="text" class="form-control" placeholder="Recipient's username" onChange={(e) => { setDate(e.target.value); setSm(false); }} />
+        <input type="number" class="form-control" placeholder="enter movie release year" onChange={(e) => { setDate(e.target.value); setSm(false); }} />
         <div class="input-group-append">
-          <button class="btn btn-primary" onClick={() => setSm(true)} type="button">Button</button>
+          <button class="btn btn-primary" onClick={() => setSm(true)} type="button">find</button>
         </div>
       </div>
       <h3>click on the movie for further description</h3>
