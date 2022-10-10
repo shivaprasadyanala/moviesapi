@@ -70,11 +70,32 @@
     margin: 5px;
 }
 
+@media screen and (max-width: 1100px) {
+    .input {
+        margin-left: 18rem;
+        width: 20rem;
+    }
+    .page {
+        margin-left: 15rem;
+        position: absolute;
+        top: 20%;
+    }
+}
+
 @media screen and (max-width: 800px) {
     .movies {
         display: grid;
         grid-template-columns: 1fr 1fr;
         padding: 50px;
+    }
+    .input {
+        margin-left: 15rem;
+        width: 15rem;
+    }
+    .page {
+        margin-left: 5rem;
+        position: absolute;
+        top: 20%;
     }
 }
 
@@ -83,5 +104,14 @@
         display: grid;
         grid-template-columns: 1fr;
         padding: 50px;
+    }
+    .input {
+        margin-left: 10rem;
+        width: 10rem;
+    }
+    .page {
+        margin-left: 0rem;
+        position: absolute;
+        top: 20%;
     }
 }
