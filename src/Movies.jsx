@@ -4,8 +4,8 @@ import Model from './Model';
 import './App.css';
 function Movies({ movies }) {
  // const [movies, setMovies] = useState([]);
- const [loading] = useState(true);
- const [error] = useState(true);
+ // const [loading] = useState(true);
+ // const [error] = useState(true);
  const [model, setModel] = useState(false);
  const [show, setShow] = useState(false);
  const [date, setDate] = useState(2022);
@@ -40,8 +40,8 @@ function Movies({ movies }) {
  // }
  // console.log(movies.data.results[0].title);
  console.log(movies);
- if (loading) return "loading...";
- if (error) return "error..."
+ // if (loading) return "loading...";
+ // if (error) return "error..."
  return (
   <div className="App">
    <h1>hello welcome to movie listing</h1>
