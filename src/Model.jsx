@@ -28,7 +28,6 @@ function Model(props) {
         setLoading(false);
       })
   }, [props.model])
-  // console.log(minfo.data.overview);
   if (loading) return "loading...";
   if (error) return "error..."
   return (
